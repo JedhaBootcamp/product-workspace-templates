@@ -1,0 +1,192 @@
+{% extends "templates/page.html" %}
+
+{% block title %}JULIE WORKSPACE{% endblock %}
+
+{% block stylesheet %}
+    {{ super() }}
+
+    <style>
+
+        .btn-jupyter {
+            color: #fff;
+            background-color: #4BE8E0;
+            border-color: #4BE8E0;
+        }
+
+        .btn-jupyter.focus,
+        .btn-jupyter:focus {
+            color: #fff;
+            background-color: #4BE8E0;
+            border-color: #23B1AB;
+        }
+        .btn-jupyter:hover {
+            color: #fff;
+            background-color: #0B7D78;
+            border-color: #0B7D78;
+        }
+        .btn-jupyter.active,
+        .btn-jupyter:active,
+        .open > .dropdown-toggle.btn-jupyter {
+            color: #fff;
+            background-color: #4BE8E0;
+            background-image: none;
+            border-color: #4BE8E0;
+        }
+        .btn-jupyter.active.focus,
+        .btn-jupyter.active:focus,
+        .btn-jupyter.active:hover,
+        .btn-jupyter:active.focus,
+        .btn-jupyter:active:focus,
+        .btn-jupyter:active:hover,
+        .open > .dropdown-toggle.btn-jupyter.focus,
+        .open > .dropdown-toggle.btn-jupyter:focus,
+        .open > .dropdown-toggle.btn-jupyter:hover {
+            color: #fff;
+            background-color: #4BE8E0;
+            border-color: #4BE8E0;
+        }
+        .btn-jupyter.disabled.focus,
+        .btn-jupyter.disabled:focus,
+        .btn-jupyter.disabled:hover,
+        .btn-jupyter[disabled].focus,
+        .btn-jupyter[disabled]:focus,
+        .btn-jupyter[disabled]:hover,
+        fieldset[disabled] .btn-jupyter.focus,
+        fieldset[disabled] .btn-jupyter:focus,
+        fieldset[disabled] .btn-jupyter:hover {
+            background-color: #4BE8E0;
+            border-color: #4BE8E0;
+        }
+        .btn-jupyter .badge {
+            color: #4BE8E0;
+            background-color: #fff;
+        }
+        .jpy-logo {
+            height: 42px;
+            margin: 10px;
+        }
+        #header {
+            border-bottom: 1px solid #e7e7e7;
+        }
+        .hidden {
+            display: none;
+        }
+        #progress-log {
+            margin-top: 8px;
+        }
+        .progress-log-event {
+            border-top: 1px solid #e7e7e7;
+            padding: 8px;
+        }
+        i.sort-icon {
+            margin-left: 4px;
+        }
+        .version_footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        div.error {
+            margin: 2em;
+            text-align: center;
+        }
+        div.ajax-error {
+            padding: 1em;
+            text-align: center;
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+        div.ajax-error hr {
+            border-top-color: #e4b9c0;
+        }
+        div.ajax-error .alert-link {
+            color: #FF629D;
+        }
+        div.error > h1 {
+            font-size: 300%;
+            line-height: normal;
+        }
+        div.error > p {
+            font-size: 200%;
+            line-height: normal;
+        }
+        #login-main {
+            display: table;
+            height: 80vh;
+        }
+        #login-main #insecure-login-warning {
+            background-color: #FFD0E2;
+            padding: 10px;
+        }
+        a#login-main #insecure-login-warning:focus,
+        a#login-main #insecure-login-warning:hover {
+            background-color: #FFD0E2;
+        }
+        #login-main .service-login {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            margin: auto auto 20% auto;
+        }
+        #login-main form {
+            display: table-cell;
+            vertical-align: middle;
+            margin: auto auto 20% auto;
+            width: 350px;
+            font-size: large;
+        }
+        #login-main .input-group,
+        #login-main button,
+        #login-main input[type="text"] {
+            width: 100%;
+        }
+        #login-main input[type="submit"] {
+            margin-top: 16px;
+        }
+        #login-main .form-control:focus,
+        #login-main input[type="submit"]:focus {
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #f37524;
+            border-color: #4BE8E0;
+            outline-color: #4BE8E0;
+        }
+        #login-main .login_error {
+            color: #4BE8E0;
+            font-weight: 700;
+            text-align: center;
+        }
+        #login-main .auth-form-header {
+            padding: 10px 20px;
+            color: #fff;
+            background: #4BE8E0;
+            border-radius: 3px 3px 0 0;
+        }
+        #login-main .auth-form-body {
+            padding: 20px;
+            font-size: 14px;
+            border: thin silver solid;
+            border-top: none;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .btn-danger {
+            background-color: #FF629D;
+            border-color: #FF629D ;
+        }
+
+        .btn-primary {
+            background-color: #4BE8E0;
+            border-color: #4BE8E0 ;
+        }
+
+        
+    </style>
+{% endblock %}
+
+{% block logo %}
+<span id="jupyterhub-logo" class="pull-left">
+    <a href="{{logo_url or base_url}}"><img src='https://drive.google.com/uc?export=view&id=1iIInu20_bNQIRMboAqb3Neuxtaz47ycq' alt='Julie Workspace' class='jpy-logo' title='Home'/></a>
+</span>
+{% endblock %}
+
+
