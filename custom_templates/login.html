@@ -3,7 +3,48 @@
 
 {% block login %}
 
+<style>
+    .welcome-login-div {
+
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        
+        background: linear-gradient(120.16deg, #9E8DFC 2.5%, #97FBF6 100%);
+        padding:2rem;
+    }
+
+    .welcome-login-container {
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        color:#1F2123;
+        text-align: center;
+        width:55%;
+    }
+
+    .login-icon {
+        width: 10rem;
+    }
+
+</style>
+
+<div class="welcome-login-div">
+
+    <div class="home-icon-container">
+        <img class="login-icon" src="https://julie-assets.s3.eu-west-3.amazonaws.com/Web+Window+1.svg" alt=""/>
+    </div>
+    <div class="welcome-login-container">
+        <h1 class="welcome-login-title">Welcome to JULIE Workspaces!</h1>
+        <h5>With Workspaces, you'll be able to launch Jupyter Notebooks on very powerful machines! </h5>
+        <h5>Simply connect using your credentials from <a href="app.julie.academy" target="_blank">JULIE's platform</a>. If you don't have credentials, please contact our <a href="mailto:richard@jedha.co">program management team</a></h5>
+    </div>
+</div>
+
 <div id="login-main" class="container">
+
+    
+
     {% if custom_html %}
     {{ custom_html | safe }}
     {% elif login_service %}
