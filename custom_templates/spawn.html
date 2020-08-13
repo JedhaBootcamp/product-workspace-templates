@@ -15,8 +15,11 @@
         justify-content: center;
         border-radius: 8px;
         padding: 4rem;
+        margin-top:2rem;
+        margin-bottom:2rem;
         background: #E9FFF6;
         border: 1px solid #B4FFE4;
+        color:#015955
     }
 
     input[type='radio'] {
@@ -26,8 +29,47 @@
     input[type='radio']:checked {
         background: url("https://julie-assets.s3.eu-west-3.amazonaws.com/Vector+7.svg");
         background-repeat: no-repeat;
+        width: 20px;
+        height: 15px;
+    }
+
+    .welcome-login-div {
+
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+
+        background: linear-gradient(120.16deg, #9E8DFC 2.5%, #97FBF6 100%);
+        padding:2rem;
+    }
+
+        .welcome-login-container {
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        color:#1F2123;
+        text-align: center;
+        width:55%;
+    }
+
+        .login-icon {
+        width: 10rem;
     }
 </style>
+
+{% block heading %}
+<div class="workspace-pres-div">
+
+    <div class="workspace-pres-container">
+        <img class="workspace-pres-icon" src="https://julie-assets.s3.eu-west-3.amazonaws.com/Working+(male+and+female)+1.svg" alt=""/>
+    </div>
+    <div class="workspace-pres-container">
+        <h1 class="workspace-pres-title">Choose your Environment!</h1>
+        <h5>Select the Workspace you need! Choose wisely ;)</h5>
+    </div>
+</div>
+
+{% endblock %}
 
 
 {{ super() }}
