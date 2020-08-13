@@ -2,10 +2,24 @@
 
 {% block title %}JULIE WORKSPACE{% endblock %}
 
+{% block scripts %}
+{{ super ()}}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
 {% block stylesheet %}
+
     {{ super() }}
 
     <style>
+
+        * {
+            font-family: 'Inter';
+        }
+
+        body {
+            background-color: #F3F6F9;
+        }
 
         .btn-jupyter {
             color: #fff;
@@ -159,24 +173,61 @@
             padding: 10px 20px;
             color: #fff;
             background: #4BE8E0;
-            border-radius: 3px 3px 0 0;
+            border-radius: 8px;
         }
         #login-main .auth-form-body {
             padding: 20px;
             font-size: 14px;
             border: thin silver solid;
             border-top: none;
-            border-radius: 0 0 3px 3px;
+            border-radius: 8px;
         }
 
         .btn-danger {
             background-color: #FF629D;
             border-color: #FF629D ;
+            border-radius: 8px;
         }
 
         .btn-primary {
             background-color: #4BE8E0;
             border-color: #4BE8E0 ;
+            border-radius: 8px;
+        }
+
+        .navbar-default {
+            background-color: #fff;
+            border-color: #e7e7e7;
+        }
+
+        .navbar-nav {
+            float: left;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .navbar-collapse {
+            width:100%;
+        }
+
+        .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #logout{
+            background-color: #F9D9DC;
+            color:#A52425;
+            border-radius: 8px;
+            border-color: #F9D9DC;
+        }
+
+        .btn-lg{
+            border-radius: 8px;
         }
 
         
@@ -185,8 +236,7 @@
 
 {% block logo %}
 <span id="jupyterhub-logo" class="pull-left">
-    <a href="{{logo_url or base_url}}"><img src='https://drive.google.com/uc?export=view&id=1iIInu20_bNQIRMboAqb3Neuxtaz47ycq' alt='Julie Workspace' class='jpy-logo' title='Home'/></a>
+    <a href="{{logo_url or base_url}}"><img src='https://julie-assets.s3.eu-west-3.amazonaws.com/logotype_colored.png' alt='Julie Workspace' class='jpy-logo' title='Home'/></a>
 </span>
 {% endblock %}
-
 
